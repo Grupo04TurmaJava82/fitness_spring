@@ -1,4 +1,4 @@
-package com.example.AppFitness.model;
+package com.generation.AppFitness.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
