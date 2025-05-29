@@ -1,8 +1,8 @@
 package com.generation.AppFitness.controller;
 
-import java.util.List;
-import java.util.Optional;
-
+import com.generation.AppFitness.model.Exercicio;
+import com.generation.AppFitness.repository.ExercicioRepository;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,13 +17,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.generation.AppFitness.model.Exercicio;
-import com.generation.AppFitness.repository.ExercicioRepository;
-
-import jakarta.validation.Valid;
+import java.util.List;
 
 @RestController
-@RequestMapping("/exercicio")
+@RequestMapping("/exercicios")
 @CrossOrigin(origins ="*", allowedHeaders = "*")
 public class ExercicioController {
 

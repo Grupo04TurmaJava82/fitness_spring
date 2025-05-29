@@ -24,13 +24,13 @@ public class Exercicio {
 	
 	@NotNull
 	private int carga;
-	
+
+	@NotNull
 	@Positive(message = "Repetições deve ser maior do que zero!")
-	@NotBlank
 	private int repeticoes;
-	
+
+	@NotNull
 	@Positive(message = "A serie deve ser maior do que zero!")
-	@NotBlank
 	private int series;
 	
 	public Long getId() {
