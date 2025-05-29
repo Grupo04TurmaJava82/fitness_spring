@@ -30,6 +30,7 @@ public class Exercicio {
 	private int repeticoes;
 	
 	@Positive(message = "A serie deve ser maior do que zero!")
+	@NotBlank
 	private int series;
 	
 	public Long getId() {
