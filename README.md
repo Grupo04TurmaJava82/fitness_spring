@@ -53,8 +53,6 @@ A API do **Gymbro** é o núcleo da aplicação de fitness personalizada. Seu ob
 
 ```mermaid
 classDiagram
-
-classDiagram
     class Exercicio {
         <<Entity>>
         - Long id
