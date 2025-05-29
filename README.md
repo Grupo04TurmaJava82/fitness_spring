@@ -53,24 +53,36 @@ A API do **Gymbro** é o núcleo da aplicação de fitness personalizada. Seu ob
 
 ```mermaid
 classDiagram
-    class Exercicio {
-        <<Entity>>
-        - Long id
-        - String nome
-        - int carga
-        - int repeticoes
-        - int series
-        + getId(): Long
-        + setId(id: Long): void
-        + getNome(): String
-        + setNome(nome: String): void
-        + getCarga(): int
-        + setCarga(carga: int): void
-        + getRepeticoes(): int
-        + setRepeticoes(repeticoes: int): void
-        + getSeries(): int
-        + setSeries(series: int): void
-    }
+
+class Exercicio {
+    +Long id
+    +String nome
+    +String grupoMuscular
+    +String equipamento
+    +String dificuldade
+}
+
+class ExercicioRepository {
+    <<interface>>
+    +List<Exercicio> findAll()
+    +Optional<Exercicio> findById(Long id)
+    +List<Exercicio> findAllByNomeContainingIgnoreCase(String nome)
+    +Exercicio save(Exercicio exercicio)
+    +void deleteById(Long id)
+}
+
+class ExercicioController {
+    +getAll() ResponseEntity<List<Exercicio>>
+    +getById(Long id) ResponseEntity<Exercicio>
+    +getByNome(String nome) ResponseEntity<List<Exercicio>>
+    +postExercicio(Exercicio exercicio) ResponseEntity<Exercicio>
+    +putExercicio(Exercicio exercicio) ResponseEntity<Exercicio>
+    +deleteExercicio(Long id) ResponseEntity<Void>
+}
+
+ExercicioRepository --> Exercicio : manipula
+ExercicioController --> ExercicioRepository : usa
+
 
 ```
 
